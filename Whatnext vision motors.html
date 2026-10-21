@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatNext Vision Motors | Shaping the Future of Mobility</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Syncopate', 'sans-serif'],
+                    },
+                    colors: {
+                        neon: '#00f3ff',
+                        dark: '#0a0a0a',
+                        surface: '#171717'
+                    },
+                    animation: {
+                        'gradient-x': 'gradient-x 15s ease infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        'gradient-x': {
+                            '0%, 100%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'left center'
+                            },
+                            '50%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'right center'
+                            },
+                        },
+                        'float': {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00f3ff; 
+        }
+
+        .glass-nav {
+            background: rgba(10, 10, 10, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .glass-card {
+            background: rgba(23, 23, 23, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .glass-card:hover {
+            border-color: rgba(0, 243, 255, 0.4);
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .text-glow {
+            text-shadow: 0 0 20px rgba(0, 243, 255, 0.5);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-neon selection:text-dark">
+
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-neon to-blue-600 animate-pulse"></div>
+                    <span class="font-display font-bold text-xl tracking-wider uppercase">WhatNext<span class="text-neon">Vision</span></span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#models" class="hover:text-neon transition-colors px-3 py-2 text-sm font-medium tracking-wide">Models</a>
+                        <a href="#innovation" class="hover:text-neon transition-colors px-3 py-2 text-sm font-medium tracking-wide">Innovation</a>
+                        <a href="#vision" class="hover:text-neon transition-colors px-3 py-2 text-sm font-medium tracking-wide">Vision</a>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <a href="#preorder" class="border border-neon text-neon hover:bg-neon hover:text-dark transition-all duration-300 px-6 py-2 rounded-full text-sm font-bold tracking-widest uppercase">Reserve Now</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button class="text-gray-300 hover:text-white focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Animated Background -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-blue-900 animate-gradient-x opacity-80"></div>
+            <!-- Grid pattern overlay -->
+            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTU5IDB2NjBIMFYwaDU5eiIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2U9IiMzMzMiIHN0cm9rZS1vcGFjaXR5PSIuMiIvPjwvc3ZnPg==')] opacity-30"></div>
+            <!-- Glowing orb effect -->
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-neon rounded-full mix-blend-screen filter blur-[128px] opacity-20 animate-float"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto mt-16">
+            <h2 class="text-neon font-semibold tracking-[0.2em] uppercase text-sm md:text-base mb-6 reveal">The New Era of Drive</h2>
+            <h1 class="font-display text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8 reveal" style="transition-delay: 100ms;">
+                Shaping the <span class="text-transparent bg-clip-text bg-gradient-to-r from-neon to-blue-500 text-glow">Future of Mobility</span>
+            </h1>
+            <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 reveal" style="transition-delay: 200ms;">
+                With unparalleled innovation and relentless excellence, WhatNext Vision Motors is redefining how the world moves. Pure electric. Pure adrenaline.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center reveal" style="transition-delay: 300ms;">
+                <a href="#models" class="bg-white text-dark hover:bg-gray-200 transition-colors px-8 py-4 rounded-full font-bold tracking-wide uppercase text-sm">Explore Models</a>
+                <a href="#innovation" class="border border-gray-600 hover:border-white transition-colors px-8 py-4 rounded-full font-bold tracking-wide uppercase text-sm">Discover Tech</a>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce flex flex-col items-center opacity-50">
+            <span class="text-xs uppercase tracking-widest mb-2">Scroll</span>
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+        </div>
+    </section>
+
+    <section id="models" class="py-24 bg-dark relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-display text-3xl md:text-4xl font-bold mb-4">Our Visionary Fleet</h2>
+                <div class="w-24 h-1 bg-neon mx-auto mb-6"></div>
+                <p class="text-gray-400 max-w-2xl mx-auto">Designed for tomorrow, built for today. Experience the perfect synthesis of aerodynamics, luxury, and sustainable power.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Vehicle Card 1 -->
+                <div class="glass-card rounded-2xl overflow-hidden group reveal">
+                    <div class="relative h-64 md:h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?q=80&w=1000&auto=format&fit=crop" alt="Concept Sedan" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-80"></div>
+                        <div class="absolute bottom-6 left-6">
+                            <h3 class="font-display text-2xl font-bold">Aether S</h3>
+                            <p class="text-neon text-sm tracking-widest uppercase mt-1">Luxury Sedan</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-6">
+                            <div class="text-center">
+                                <span class="block text-2xl font-bold">1.9s</span>
+                                <span class="text-xs text-gray-500 uppercase tracking-wider">0-60 MPH</span>
+                            </div>
+                            <div class="text-center">
+                                <span class="block text-2xl font-bold">520mi</span>
+                                <span class="text-xs text-gray-500 uppercase tracking-wider">Range</span>
+                            </div>
+                            <div class="text-center">
+                                <span class="block text-2xl font-bold">1020</span>
+                                <span class="text-xs text-gray-500 uppercase tracking-wider">HP</span>
+                            </div>
+                        </div>
+                        <button class="w-full py-3 border border-gray-600 hover:border-neon hover:text-neon rounded-full transition-colors uppercase text-sm tracking-widest font-semibold">Configure</button>
+                    </div>
+                </div>
+
+                <!-- Vehicle Card 2 -->
+                <div class="glass-card rounded-2xl overflow-hidden group reveal" style="transition-delay: 100ms;">
+                    <div class="relative h-64 md:h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?q=80&w=1000&auto=format&fit=crop" alt="Concept SUV" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-80"></div>
+                        <div class="absolute bottom-6 left-6">
+                            <h3 class="font-display text-2xl font-bold">Terra X</h3>
+                            <p class="text-neon text-sm tracking-widest uppercase mt-1">Performance SUV</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-6">
+                            <div class="text-center">
+                                <span class="block text-2xl font-bold">2.5s</span>
+                                <span class="text-xs text-gray-500 uppercase tracking-wider">0-60 MPH</span>
+                            </div>
+                            <div class="text-center">
+                                <span class="block text-2xl font-bold">480mi</span>
+                                <span class="text-xs text-gray-500 uppercase tracking-wider">Range</span>
+                            </div>
+                            <div class="text-center">
+                                <span class="block text-2xl font-bold">950</span>
+                                <span class="text-xs text-gray-500 uppercase tracking-wider">HP</span>
+                            </div>
+                        </div>
+                        <button class="w-full py-3 border border-gray-600 hover:border-neon hover:text-neon rounded-full transition-colors uppercase text-sm tracking-widest font-semibold">Configure</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="innovation" class="py-24 relative overflow-hidden bg-surface">
+        <div class="absolute inset-0 opacity-10">
+             <svg class="absolute w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path d="M0,100 C20,0 50,100 100,0 L100,100 Z" fill="#00f3ff"/>
+            </svg>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <h2 class="font-display text-3xl md:text-4xl font-bold mb-6">Driven By <span class="text-neon">Intelligence</span></h2>
+                    <p class="text-gray-300 text-lg mb-8 leading-relaxed">
+                        Innovation isn't just a buzzword; it's our core operating system. Our proprietary NextOS integrates seamlessly with hyper-efficient solid-state batteries to provide an unprecedented synergy of power, safety, and autonomy.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-lg bg-dark border border-gray-700 flex items-center justify-center flex-shrink-0 text-neon">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">Quantum Battery Tech</h4>
+                                <p class="text-gray-400 text-sm">Achieve 80% charge in just 12 minutes with our revolutionary thermal-managed cell architecture.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-lg bg-dark border border-gray-700 flex items-center justify-center flex-shrink-0 text-neon">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">Omni-Sense Autonomy</h4>
+                                <p class="text-gray-400 text-sm">LiDAR, Radar, and visual sensors combine via AI to deliver true Level 4 autonomous driving capabilities.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative reveal" style="transition-delay: 200ms;">
+                    <!-- Abstract Tech Representation -->
+                    <div class="aspect-square rounded-full border border-gray-700 flex items-center justify-center relative p-8">
+                        <div class="absolute inset-0 rounded-full border-t-2 border-neon animate-[spin_4s_linear_infinite]"></div>
+                        <div class="absolute inset-4 rounded-full border-b-2 border-blue-500 animate-[spin_6s_linear_infinite_reverse]"></div>
+                        <div class="absolute inset-8 rounded-full border-l-2 border-purple-500 animate-[spin_8s_linear_infinite]"></div>
+                        <div class="w-full h-full rounded-full bg-dark flex items-center justify-center relative z-10 overflow-hidden shadow-[0_0_50px_rgba(0,243,255,0.2)]">
+                            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop" alt="Circuit" class="w-full h-full object-cover opacity-40 mix-blend-luminosity">
+                            <span class="absolute font-display font-bold text-2xl tracking-widest">Next<span class="text-neon">OS</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gradient-to-b from-dark to-black border-t border-gray-800">
+        <div class="max-w-4xl mx-auto px-4 text-center reveal">
+            <h2 class="font-display text-4xl font-bold mb-6">Be Part of the Future</h2>
+            <p class="text-gray-400 mb-10 text-lg">Production slots for the Aether S and Terra X are strictly limited. Secure your place in the vanguard of mobility.</p>
+            <form class="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto" onsubmit="event.preventDefault();">
+                <input type="email" placeholder="Enter your email" class="px-6 py-4 rounded-full bg-surface border border-gray-700 focus:border-neon focus:outline-none focus:ring-1 focus:ring-neon text-white w-full">
+                <button type="submit" class="bg-neon text-dark hover:bg-white transition-colors px-8 py-4 rounded-full font-bold tracking-wide uppercase whitespace-nowrap">Stay Updated</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-black py-12 border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-6 h-6 rounded-full bg-gradient-to-tr from-neon to-blue-600"></div>
+                        <span class="font-display font-bold text-lg tracking-wider uppercase">WhatNext<span class="text-neon">Vision</span></span>
+                    </div>
+                    <p class="text-gray-500 text-sm max-w-sm">Shaping the future of mobility with innovation and excellence. We build not just vehicles, but sustainable ecosystems for tomorrow.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 uppercase tracking-wider text-sm">Company</h4>
+                    <ul class="space-y-2 text-gray-500 text-sm">
+                        <li><a href="#" class="hover:text-neon transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-neon transition-colors">Careers</a></li>
+                        <li><a href="#" class="hover:text-neon transition-colors">Investors</a></li>
+                        <li><a href="#" class="hover:text-neon transition-colors">Press</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 uppercase tracking-wider text-sm">Legal</h4>
+                    <ul class="space-y-2 text-gray-500 text-sm">
+                        <li><a href="#" class="hover:text-neon transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-neon transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-neon transition-colors">Vehicle Recalls</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-gray-900 text-gray-600 text-sm">
+                <p>&copy; 2026 WhatNext Vision Motors. All rights reserved.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white transition-colors">Twitter</a>
+                    <a href="#" class="hover:text-white transition-colors">Instagram</a>
+                    <a href="#" class="hover:text-white transition-colors">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll reveal animation observer
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.reveal');
+            
+            const revealOptions = {
+                threshold: 0.15,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        return;
+                    } else {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, revealOptions);
+
+            reveals.forEach(reveal => {
+                revealOnScroll.observe(reveal);
+            });
+            
+            // Trigger immediately for items already in view
+            setTimeout(() => {
+                reveals.forEach(reveal => {
+                    const windowHeight = window.innerHeight;
+                    const elementTop = reveal.getBoundingClientRect().top;
+                    if (elementTop < windowHeight - 50) {
+                        reveal.classList.add('active');
+                    }
+                });
+            }, 100);
+            
+            // Navbar background effect on scroll
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.style.background = 'rgba(10, 10, 10, 0.9)';
+                    navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.5)';
+                } else {
+                    navbar.style.background = 'rgba(10, 10, 10, 0.6)';
+                    navbar.style.boxShadow = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
